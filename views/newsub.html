@@ -1,0 +1,37 @@
+<% include partials/header.html %>
+
+<div style='height : 100%; display : flex; justify-content : center;align-items: center;'>
+    <form method='POST' action='/subject'>
+        <div class="form-group" style='width : 100%'>
+            <label for="subjectName">Subject Name</label>
+            <input type='text' class="form-control" id="subjectName" name='subjectName' placeholder='Subject Name'>
+        </div>
+        <div class="form-group" style='width : 100%'>
+            <label for="branchName">Branch Name</label>
+            <select class="form-control" name='branch' id='branchName'>
+                <option class="hidden" selected disabled></option>
+                <option value='Computers'>Computers</option>
+                <option value='IT'>IT</option>
+                <option value='Electronics'>Electronics</option>
+                <option value='Production'>Production</option>
+            </select>
+        </div>
+        <div class="form-group" style='width : 100%'>
+            <label for="year">Year</label>
+            <select class="form-control" name='year' id='year'>
+                <option class="hidden" selected disabled></option>
+                <option value='1st'>First</option>
+                <option value='2nd'>Second</option>
+                <option value='3rd'>Third</option>
+                <option value='4th'>Fourth</option>
+            </select>
+        </div>
+
+        <button class="btn btn-warning">Submit</button>
+        <a href='/subject' class="btn btn-warning">Go back to subjects</a>
+    </form>
+
+</div>
+
+
+<% include partials/footer.html %>

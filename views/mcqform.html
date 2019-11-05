@@ -1,0 +1,13 @@
+<% include partials/header.html %>
+<form method='POST' action='/topic/<%= topic._id %>'>
+    <input type='text' name='mcq[question]' placeholder='Enter question'><br>
+    <input type='text' name='mcq[opt1]' placeholder='option 1'><br>
+    <input type='text' name='mcq[opt2]' placeholder='option 2'><br>
+    <input type='text' name='mcq[opt3]' placeholder='option 3'><br>
+    <input type='text' name='mcq[opt4]' placeholder='option 4'><br>
+    <input type='text' name='mcq[answer]' placeholder='answer'><br>
+    <button>Submit</button>
+</form>
+<a href='/topic/<%= topic._id %>'>Go Back to the mcqs</a>
+
+<% include partials/footer.html %>

@@ -1,0 +1,58 @@
+html, body {
+  background-color: #F1F1F1;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  
+  width: 100%;
+}
+
+.wrapper {
+  background-color: #FFF;
+  box-sizing: border-box;
+  height: min-content;
+  align-content: flex-start;
+  padding: 10px 10px;
+  margin: auto;
+  width: 100%;
+}
+
+.input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #CCC;
+  color: #555;
+  font-family: 'Arvo';
+  font-size: 18px;
+  height:fit-content;
+  align-content: left;
+  padding: 10px 10px;
+  width: 100%;
+}
+.input:focus {
+outline: none;    
+}
+
+input::-webkit-input-placeholder {
+  color: #AAA;
+}
+
+input:focus::-webkit-input-placeholder {
+  color: dodgerblue;
+}
+
+.input:focus+.underline {
+  transform: scale(1);
+}
+
+.underline {
+  background-color: dodgerblue;
+  display: inline-block;
+  height: 2px;
+  margin-bottom: 12px;
+  -webkit-transform: scale(0, 1);
+  transform: scale(0, 1);
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+  width: 100%;
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Quiz Manager</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body style="background-color: #fafafa;">
+    <!-- <a href = '/subject/<%= subject._id %>/topic/newtopic'>Add new topic</a> -->
+    <nav class='navbar navbar-expand-sm bg-dark navbar-dark fixed-top'>
+
+        <a class='navbar-brand' href='#' style="color: aliceblue">QuizUP</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#x" aria-expanded="false">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class='collapse navbar-collapse'>
+            <ul class='navbar-nav ml-auto'>
+                <li class="nav-item">
+                    <a class="nav-link" href='/logout'>LogOut</a>
+                </li>
+            </ul>
+        </div>
+
+
+    </nav>
+    <div>
+        <h2 style="font-family: 'Roboto Slab', serif; margin-left : 130px ;margin-top:100px" margin-bottom: 10px;>The
+            list of topics</h2>
+    </div>
+
+    <% subject.topics.forEach(function(topic) { %>
+    <div class='container' style='margin-bottom: 10px;'>
+        <div class="card">
+            <div class="card-header">
+                <%= topic.topicName %>
+            </div>
+            <% if(req.user.type == 'teacher') { %>
+            <div class="card-body">
+                <a href="/topic/<%= topic._id %>/new" class="btn btn-primary">Add Questions</a>
+                <a href="/topic/<%= topic._id %>" class="btn btn-success">View Questions</a>
+            </div>
+            <% } %>
+            <% if(req.user.type == 'student') { %>
+            <div class="card-body">
+                <a href="/quizup/<%= topic._id %>" class="btn btn-primary">View Questions</a>
+            </div>
+            <% } %>
+        </div>
+    </div>
+    <% }) %>
+
+    <div style='text-align: center'>
+        <% if(req.user.type == 'teacher') { %>
+        <a href='/subject/<%= subject._id %>/topic/newtopic' class="btn btn-secondary">Add Topics's</a>
+        <% } %>
+        <a href='/subject' class='btn btn-secondary'>Go back to subjects</a>
+    </div>
+
+    <% include partials/footer.html %>
