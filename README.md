@@ -9,19 +9,19 @@ git clone <url>
 npm run dev
 ```
 
-## Roadmap 📑
+## Task List 📑
 
 #### Teachers' Side:
 - [x] Registerations &amp; Login using Passportjs
-- [ ] CRUD operations on Subjects, Topics & Quizes
+- [x] CRUD operations on Subjects, Topics & Quizes
 - [ ] Report Generation
 
 #### Students' Side:
 - [x] Login using Passportjs
-- [ ] View Courses
-- [ ] Attempt Quizzes
+- [x] View Courses
+- [x] Attempt Quizzes
 - [ ] View Score Board
 
-##### This project is not meant to be production ready but instead serve as the foundation repository to understand the in-depth working of a Web App in Node &amp; MongoDB.
+##### This project is not meant to be production ready but instead serves as the foundation repository to understand the structure &amp; working of a Web App in Node &amp; MongoDB.
 
 > &copy; 2020 Darlene Nazareth
