@@ -14,7 +14,7 @@ npm run dev
 #### Teachers' Side:
 - [x] Registerations &amp; Login using Passportjs
 - [x] CRUD operations on Subjects, Topics & Quizes
-- [ ] Report Generation
+- [x] Report Generation
 
 #### Students' Side:
 - [x] Login using Passportjs
