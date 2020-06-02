@@ -25,7 +25,7 @@ npm run dev
 ### Contributors
 <ul>
   <li><a href='https://github.com/elita04'>Elita Menezes</a></li>
-  <li>Simran D'souza</li>
+  <li><a href='https://github.com/simdsouza'>Simran D'souza</a></li>
   <li>Darlene Nazareth</li>
 </ul>
 
