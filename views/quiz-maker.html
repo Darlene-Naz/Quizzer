@@ -7,80 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Quiz Maker</title>
-    <link rel='stylesheet' type='text/css' href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel='stylesheet' type='text/css' href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href='/css/bootstrap.css'>
     <link rel="stylesheet" type="text/css" href='/css/finalstyle.css'>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-    <script>
-
-        var counter = 1;
-        var limit = 10;
-        console.log(window.location.search);
-
-        function addInput() {
-
-            if (counter == limit) {
-                alert("You have reached the limit of adding " + counter + " questions");
-                return false;
-            }
-            else {
-                var newdiv = document.createElement('div');
-                newdiv.setAttribute("class", "card");
-                newdiv.setAttribute("name", "qset" + (counter + 1));
-                newdiv.innerHTML = "<div class=card-body><div class=wrapper><input class=input id=" + "q" + (counter + 1) + " placeholder= 'Untitled Question' type=text style=font-size:18px; required><span class=underline></span></div><label class=input-container style=width:100%;><i class='fa fa-circle-o icon'></i><input type=text id=" + "q" + (counter + 1) + "opt1" + " class=form-control placeholder='Option 1' required></label><label class=input-container style=width:100%;><i class='fa fa-circle-o icon'></i><input type=text id=" + "q" + (counter + 1) + "opt2" + " class=form-control placeholder='Option 2' required></label><label class=input-container style=width:100%;><i class='fa fa-circle-o icon'></i><input type=text id=" + "q" + (counter + 1) + "opt3" + " class=form-control placeholder='Option 3' required></label><label class=input-container style=width:100%;><i class='fa fa-circle-o icon'></i><input type=text id=" + "q" + (counter + 1) + "opt4" + " class=form-control placeholder='Option 4' required></label><label class=input-container style=width:100%;><i class='fa fa-check-circle icon'></i><input type=text id=" + "q" + (counter + 1) + "ans" + " class=form-control placeholder='Answer' required></label></div><div class=card-footer align=right><a href=# data-toggle=tooltip data-placement=bottom title='Add question' style=margin-right:3px id=addCard onclick='return addInput();'><i class='fa fa-plus-circle fa-2x'></i></a><span data-toggle=tooltip data-placement=bottom title='Delete question'><i class='fa fa-trash fa-2x'></i></span></div>";
-                document.getElementById('dynamicInput').appendChild(newdiv);
-                counter++;
-                return false;
-            }
-        }
-
-        function createQuiz() {
-
-            var no_of_qset = counter;
-
-            var qset = [];
-
-            var title = document.getElementById("title").value;
-
-            var desc = document.getElementsByName("desc").value;
-
-
-            for (let index = 0; index < no_of_qset; index++) {
-                var q = 'q' + (index + 1);
-                var opt1 = "q" + (index + 1) + "opt1";
-                var opt2 = "q" + (index + 1) + "opt2";
-                var opt3 = "q" + (index + 1) + "opt3";
-                var opt4 = "q" + (index + 1) + "opt4";
-                var ans = "q" + (index + 1) + "ans";
-
-                qset.push({
-                    question: document.getElementById(q).value,
-                    opt1: document.getElementById(opt1).value,
-                    opt2: document.getElementById(opt2).value,
-                    opt3: document.getElementById(opt3).value,
-                    opt4: document.getElementById(opt4).value,
-                    answer: document.getElementById(ans).value
-                });
-            }
-
-            axios.post('/topic/' + document.getElementById('myid').value, {
-                Title: title,
-                Description: desc,
-                Qset: qset
-            }).then(function (response) {
-                console.log(response);
-            }).catch(function (error) {
-                console.log(error);
-            });
-        }
-
-
-    </script>
-
 </head>
 
 <body style=" text-align: center;background:#ced4da">
@@ -100,56 +30,55 @@
                 <span class="underline"></span>
             </div>
             <div class="wrapper">
-                <input class="input" id="desc" placeholder="Description (optional)" type="text"
-                    style="font-size: 12px;">
+                <input class="input" id="desc" placeholder="Description (optional)" type="text" style="font-size: 12px;">
                 <span class="underline"></span>
             </div>
 
             <div class="card" name="qset1">
                 <div class="card-body">
                     <div class="wrapper">
-                        <input class="input" id="q1" placeholder="Untitled Question*" type="text"
-                            style="font-size: 18px;" required>
+                        <input class="input" id="q1" placeholder="Untitled Question*" type="text" style="font-size: 18px;" required>
                         <span class="underline"></span>
                     </div>
                     <label class="input-container" style="width: 100%;">
-                        <i class="fa fa-circle-o icon"></i>
-                        <input type="text" id="q1opt1" class="form-control " placeholder="Option 1" required>
-                    </label>
+                            <i class="fa fa-circle-o icon"></i>
+                            <input type="text" id="q1opt1" class="form-control " placeholder="Option 1" required>
+                        </label>
                     <label class="input-container" style="width: 100%;">
-                        <i class="fa fa-circle-o icon"></i>
-                        <input type="text" id="q1opt2" class="form-control " placeholder="Option 2" required>
-                    </label>
+                            <i class="fa fa-circle-o icon"></i>
+                            <input type="text" id="q1opt2" class="form-control " placeholder="Option 2" required>
+                        </label>
                     <label class="input-container" style="width: 100%;">
-                        <i class="fa fa-circle-o icon"></i>
-                        <input type="text" id="q1opt3" class="form-control " placeholder="Option 3" required>
-                    </label>
+                            <i class="fa fa-circle-o icon"></i>
+                            <input type="text" id="q1opt3" class="form-control " placeholder="Option 3" required>
+                        </label>
                     <label class="input-container" style="width: 100%;">
-                        <i class="fa fa-circle-o icon"></i>
-                        <input type="text" id="q1opt4" class="form-control " placeholder="Option 4" required>
-                    </label>
+                            <i class="fa fa-circle-o icon"></i>
+                            <input type="text" id="q1opt4" class="form-control " placeholder="Option 4" required>
+                        </label>
                     <label class="input-container" style="width: 100%;">
-                        <i class="fa fa-check-circle icon"></i>
-                        <input type="text" id="q1ans" class="form-control " placeholder="Answer" required>
-                    </label>
+                            <i class="fa fa-check-circle icon"></i>
+                            <input type="text" id="q1ans" class="form-control " placeholder="Answer" required>
+                        </label>
 
                 </div>
                 <div class="card-footer" align="right">
-                    <a href="#" data-toggle="tooltip" data-placement="bottom" title="Add question" id="addCard"
-                        onclick="return addInput();"><i class=" fa fa-plus-circle fa-2x"></i>
-                    </a>
+                    <a href="#" data-toggle="tooltip" data-placement="bottom" title="Add question" id="addCard" onclick="return addInput();"><i class=" fa fa-plus-circle fa-2x"></i>
+                        </a>
 
                     <span data-toggle="tooltip" data-placement="bottom" title="Delete question"><i
-                            class=" fa fa-trash fa-2x"></i></span>
+                                class=" fa fa-trash fa-2x"></i></span>
                 </div>
             </div>
 
         </div>
 
-        <button name="submit_btn" value="primary" type="submit" onclick="return createQuiz()"
-            class="btn-get-started">DONE</button>
+        <button name="submit_btn" value="primary" type="submit" onclick="return createQuiz()" class="btn-get-started">DONE</button>
 
     </form>
+    <script type='text/javascript' src='/js/main.js'></script>
+    <script type='text/javascript' src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </body>
 
 </html>
