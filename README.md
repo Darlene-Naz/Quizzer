@@ -2,14 +2,14 @@
 
 ✨ Student-Teacher Quiz App in Node &amp; MongoDB ✨
 
-## Setup 💻
+### Setup 💻
 
 ```bash
 git clone <url>
 npm run dev
 ```
 
-## Task List :
+### Task List 
 
 #### Teachers' Side:
 - [x] Registerations &amp; Login using Passportjs
@@ -28,4 +28,5 @@ npm run dev
   <li>Simran D'souza</li>
   <li>Darlene Nazareth</li>
 </ul>
+
 > &copy; 2020 Copyright Darlene Nazareth
