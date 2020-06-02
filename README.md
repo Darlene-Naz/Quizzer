@@ -22,11 +22,11 @@ npm run dev
 - [x] Attempt Quizzes
 - [ ] View Score Board
 
-### Contributers
+### Contributors
 <ul>
   <li>Elita Menezes</li>
   <li>Simran D'souza</li>
   <li>Darlene Nazareth</li>
 </ul>
 
-> &copy; 2020 Copyright Darlene Nazareth
+> &copy; 2020 Copyright
