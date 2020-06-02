@@ -9,7 +9,7 @@ git clone <url>
 npm run dev
 ```
 
-## Task List 📑
+## Task List :
 
 #### Teachers' Side:
 - [x] Registerations &amp; Login using Passportjs
@@ -22,6 +22,10 @@ npm run dev
 - [x] Attempt Quizzes
 - [ ] View Score Board
 
-##### This project is not meant to be production ready but instead serves as the foundation repository to understand the structure &amp; working of a Web App in Node &amp; MongoDB.
-
-> &copy; 2020 Darlene Nazareth
+### Contributers
+<ul>
+  <li>Elita Menezes</li>
+  <li>Simran D'souza</li>
+  <li>Darlene Nazareth</li>
+</ul>
+> &copy; 2020 Copyright Darlene Nazareth
